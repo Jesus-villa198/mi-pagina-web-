@@ -1,0 +1,2839 @@
+body{
+    background: black !important;
+}
+/*==========================
+
+
+
+      GOOGLE FONT
+
+==========================*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/*==========================
+
+      RESET
+
+==========================*/
+
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:
+
+    radial-gradient(circle at top,#6b4423 0%,#2b1b13 35%,#141414 100%);
+
+    color:#ffffff;
+
+    overflow-x:hidden;
+
+}
+
+/*==========================
+
+      SCROLLBAR
+
+==========================*/
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#1d1d1d;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#d4af37;
+
+    border-radius:20px;
+
+}
+
+/*==========================
+
+      HEADER
+
+==========================*/
+
+header{
+
+    position:fixed;
+
+    top:0;
+
+    width:100%;
+
+    height:90px;
+
+    padding:0 70px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    background:rgba(0,0,0,.45);
+
+    backdrop-filter:blur(15px);
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+    z-index:999;
+
+}
+
+/*==========================
+
+        LOGO
+
+==========================*/
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+}
+
+.logo i{
+
+    font-size:45px;
+
+    color:#d4af37;
+
+}
+
+.logo h2{
+
+    color:white;
+
+    font-size:28px;
+
+}
+
+.logo span{
+
+    color:#d4af37;
+
+    font-size:13px;
+
+    letter-spacing:2px;
+
+}
+
+/*==========================
+
+      MENU
+
+==========================*/
+
+nav{
+
+    display:flex;
+
+    gap:30px;
+
+}
+
+nav a{
+
+    text-decoration:none;
+
+    color:white;
+
+    font-weight:500;
+
+    transition:.35s;
+
+    position:relative;
+
+}
+
+nav a::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:0;
+
+    height:2px;
+
+    background:#d4af37;
+
+    left:0;
+
+    bottom:-8px;
+
+    transition:.4s;
+
+}
+
+nav a:hover::after{
+
+    width:100%;
+
+}
+
+nav a:hover{
+
+    color:#d4af37;
+
+}
+
+/*==========================
+
+      BOTON HEADER
+
+==========================*/
+
+.btn-header{
+
+    text-decoration:none;
+
+    color:white;
+
+    background:linear-gradient(45deg,#d4af37,#9f7b17);
+
+    padding:12px 26px;
+
+    border-radius:40px;
+
+    font-weight:bold;
+
+    transition:.4s;
+
+}
+
+.btn-header:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 0 20px rgba(212,175,55,.5);
+
+}
+
+/*==========================
+
+      HERO
+
+==========================*/
+
+.hero{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:150px 10% 60px;
+
+}
+
+.hero-info{
+
+    width:55%;
+
+}
+
+.etiqueta{
+
+    display:inline-block;
+
+    background:rgba(212,175,55,.15);
+
+    color:#d4af37;
+
+    border:1px solid #d4af37;
+
+    padding:10px 20px;
+
+    border-radius:30px;
+
+    margin-bottom:25px;
+
+}
+
+.hero h1{
+
+    font-size:75px;
+
+    color:#ffffff;
+
+    line-height:80px;
+
+    margin-bottom:25px;
+
+}
+
+.hero p{
+
+    font-size:18px;
+
+    color:#d7d7d7;
+
+    line-height:33px;
+
+    margin-bottom:35px;
+
+}
+
+/*==========================
+
+      BOTONES
+
+==========================*/
+
+.botones{
+
+    display:flex;
+
+    gap:20px;
+
+    margin-bottom:50px;
+
+}
+
+.btn{
+
+    text-decoration:none;
+
+    color:#111;
+
+    background:#d4af37;
+
+    padding:15px 35px;
+
+    border-radius:40px;
+
+    font-weight:bold;
+
+    transition:.4s;
+
+}
+
+.btn:hover{
+
+    transform:scale(1.05);
+
+}
+
+.btn2{
+
+    text-decoration:none;
+
+    color:white;
+
+    border:2px solid #d4af37;
+
+    padding:15px 35px;
+
+    border-radius:40px;
+
+    transition:.4s;
+
+}
+
+.btn2:hover{
+
+    background:#d4af37;
+
+    color:#111;
+
+}
+
+/*==========================
+
+      ESTADISTICAS
+
+==========================*/
+
+.estadisticas{
+
+    display:flex;
+
+    gap:35px;
+
+}
+
+.estadisticas div{
+
+    background:rgba(255,255,255,.05);
+
+    backdrop-filter:blur(12px);
+
+    padding:22px;
+
+    border-radius:18px;
+
+    text-align:center;
+
+    width:160px;
+
+    border:1px solid rgba(255,255,255,.08);
+
+}
+
+.estadisticas h3{
+
+    color:#d4af37;
+
+    font-size:30px;
+
+}
+
+.estadisticas p{
+
+    margin-top:10px;
+
+    font-size:15px;
+
+}
+
+/*==========================
+
+      IMAGEN HERO
+
+==========================*/
+
+.hero-img{
+
+    width:40%;
+
+    display:flex;
+
+    justify-content:center;
+
+}
+
+.hero-img img{
+
+    width:420px;
+
+    border-radius:30px;
+
+    border:5px solid rgba(212,175,55,.25);
+
+    box-shadow:
+
+    0 20px 50px rgba(0,0,0,.6),
+
+    0 0 40px rgba(212,175,55,.25);
+
+    transition:.5s;
+
+}
+
+.hero-img img:hover{
+
+    transform:scale(1.03);
+
+}
+
+/*==========================
+
+      TITULOS
+
+==========================*/
+
+section{
+
+    padding:90px 10%;
+
+}
+
+h2{
+
+    font-size:45px;
+
+    text-align:center;
+
+    color:#d4af37;
+
+    margin-bottom:20px;
+
+}
+
+.linea{
+
+    width:120px;
+
+    height:4px;
+
+    background:#d4af37;
+
+    margin:auto;
+
+    margin-bottom:60px;
+
+}
+
+/*==========================
+
+
+
+      BIOGRAFÍA
+
+==========================*/
+
+.bio-grid{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:60px;
+
+    align-items:center;
+
+}
+
+.bio-grid img{
+
+    width:100%;
+
+    border-radius:25px;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.5);
+
+    transition:.5s;
+
+}
+
+.bio-grid img:hover{
+
+    transform:scale(1.03);
+
+}
+
+.bio-grid div:last-child{
+
+    background:rgba(255,255,255,.05);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    padding:40px;
+
+    border-radius:25px;
+
+}
+
+.bio-grid h3{
+
+    color:#d4af37;
+
+    font-size:32px;
+
+    margin-bottom:20px;
+
+}
+
+.bio-grid p{
+
+    color:#dddddd;
+
+    line-height:32px;
+
+    margin-bottom:18px;
+
+    text-align:justify;
+
+}
+
+/*==========================
+
+      TITULOS
+
+==========================*/
+
+.titulo{
+
+    text-align:center;
+
+    margin-bottom:60px;
+
+}
+
+.titulo p{
+
+    color:#d0d0d0;
+
+    margin-top:15px;
+
+    font-size:18px;
+
+}
+
+/*==========================
+
+      ÁLBUMES
+
+==========================*/
+
+.albumes{
+
+    background:linear-gradient(to bottom,#1d1d1d,#2d1d18);
+
+}
+
+.cards{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+    gap:35px;
+
+}
+
+.card{
+
+    background:rgba(255,255,255,.05);
+
+    backdrop-filter:blur(20px);
+
+    border-radius:25px;
+
+    overflow:hidden;
+
+    transition:.45s;
+
+    border:1px solid rgba(255,255,255,.08);
+
+}
+
+.card:hover{
+
+    transform:translateY(-12px);
+
+    box-shadow:0 20px 35px rgba(212,175,55,.25);
+
+}
+
+.card img{
+
+    width:100%;
+
+    height:330px;
+
+    object-fit:cover;
+
+}
+
+.contenido-card{
+
+    padding:25px;
+
+}
+
+.contenido-card h3{
+
+    color:#d4af37;
+
+    margin-bottom:10px;
+
+    font-size:24px;
+
+}
+
+.contenido-card span{
+
+    display:inline-block;
+
+    background:#d4af37;
+
+    color:#111;
+
+    padding:6px 15px;
+
+    border-radius:20px;
+
+    font-weight:bold;
+
+    margin-bottom:18px;
+
+}
+
+.contenido-card p{
+
+    color:#dadada;
+
+    line-height:28px;
+
+}
+
+/*==========================
+
+      PREMIOS
+
+==========================*/
+
+.premios{
+
+    background:#181818;
+
+}
+
+.contenedor-premios{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    gap:30px;
+
+}
+
+.premio{
+
+    background:rgba(255,255,255,.05);
+
+    padding:45px;
+
+    border-radius:25px;
+
+    text-align:center;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    transition:.4s;
+
+}
+
+.premio:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 15px 30px rgba(212,175,55,.25);
+
+}
+
+.premio i{
+
+    font-size:45px;
+
+    color:#d4af37;
+
+    margin-bottom:20px;
+
+}
+
+.premio h3{
+
+    margin-bottom:15px;
+
+}
+
+.premio h1{
+
+    color:#d4af37;
+
+    font-size:48px;
+
+}
+
+/*==========================
+
+      ESTILO MUSICAL
+
+==========================*/
+
+.estilo{
+
+    background:linear-gradient(135deg,#2d1b13,#1b1b1b);
+
+}
+
+.estilo p{
+
+    max-width:900px;
+
+    margin:auto;
+
+    text-align:center;
+
+    line-height:35px;
+
+    color:#e3e3e3;
+
+    font-size:19px;
+
+}
+
+/*==========================
+
+      GALERÍA
+
+==========================*/
+
+.grid-galeria{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+    gap:25px;
+
+}
+
+.grid-galeria img{
+
+    width:100%;
+
+    height:280px;
+
+    object-fit:cover;
+
+    border-radius:20px;
+
+    cursor:pointer;
+
+    transition:.5s;
+
+    border:3px solid transparent;
+
+}
+
+.grid-galeria img:hover{
+
+    transform:scale(1.05);
+
+    border-color:#d4af37;
+
+    box-shadow:0 15px 35px rgba(212,175,55,.35);
+
+}
+
+/*==========================
+
+        MÚSICA
+
+==========================*/
+
+
+
+.musica{
+
+
+
+    background:linear-gradient(180deg,#1a1a1a,#2b1d18);
+
+
+
+}
+
+
+
+.musica-contenedor{
+
+
+
+    display:grid;
+
+
+
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+
+
+
+    gap:40px;
+
+
+
+    margin-top:50px;
+
+
+
+}
+
+
+
+.musica-card{
+
+
+
+    background:rgba(255,255,255,.06);
+
+
+
+    backdrop-filter:blur(15px);
+
+
+
+    border-radius:25px;
+
+
+
+    padding:40px;
+
+
+
+    text-align:center;
+
+
+
+    border:1px solid rgba(255,255,255,.08);
+
+
+
+    transition:.4s;
+
+
+
+}
+
+
+
+.musica-card:hover{
+
+
+
+    transform:translateY(-10px);
+
+
+
+    box-shadow:0 20px 35px rgba(212,175,55,.3);
+
+
+
+}
+
+
+
+.musica-card i{
+
+
+
+    font-size:60px;
+
+
+
+    color:#d4af37;
+
+
+
+    margin-bottom:25px;
+
+
+
+}
+
+
+
+.musica-card h3{
+
+
+
+    font-size:28px;
+
+
+
+    margin-bottom:15px;
+
+
+
+}
+
+
+
+.musica-card p{
+
+
+
+    color:#d9d9d9;
+
+
+
+    line-height:28px;
+
+
+
+    margin-bottom:25px;
+
+
+
+}
+
+
+
+.musica-card a{
+
+
+
+    display:inline-block;
+
+
+
+    text-decoration:none;
+
+
+
+    background:#d4af37;
+
+
+
+    color:#111;
+
+
+
+    padding:14px 28px;
+
+
+
+    border-radius:30px;
+
+
+
+    font-weight:bold;
+
+
+
+    transition:.4s;
+
+
+
+}
+
+
+
+.musica-card a:hover{
+
+
+
+    transform:scale(1.05);
+
+
+
+}
+
+
+
+/*==========================
+
+        CONTACTO
+
+==========================*/
+
+
+
+.contacto{
+
+
+
+    background:#141414;
+
+
+
+}
+
+
+
+form{
+
+
+
+    max-width:700px;
+
+
+
+    margin:auto;
+
+
+
+    display:flex;
+
+
+
+    flex-direction:column;
+
+
+
+    gap:20px;
+
+
+
+}
+
+
+
+input,
+
+textarea{
+
+
+
+    width:100%;
+
+
+
+    padding:18px;
+
+
+
+    border:none;
+
+
+
+    outline:none;
+
+
+
+    border-radius:15px;
+
+
+
+    background:#252525;
+
+
+
+    color:white;
+
+
+
+    font-size:16px;
+
+
+
+}
+
+
+
+input::placeholder,
+
+textarea::placeholder{
+
+
+
+    color:#c8c8c8;
+
+
+
+}
+
+
+
+button{
+
+
+
+    padding:18px;
+
+
+
+    border:none;
+
+
+
+    border-radius:35px;
+
+
+
+    background:#d4af37;
+
+
+
+    color:#111;
+
+
+
+    font-size:18px;
+
+
+
+    font-weight:bold;
+
+
+
+    cursor:pointer;
+
+
+
+    transition:.4s;
+
+
+
+}
+
+
+
+button:hover{
+
+
+
+    transform:scale(1.04);
+
+
+
+    box-shadow:0 10px 25px rgba(212,175,55,.4);
+
+
+
+}
+
+
+
+/*==========================
+
+        FOOTER
+
+==========================*/
+
+
+
+footer{
+
+
+
+    background:#0f0f0f;
+
+
+
+    padding:60px 10%;
+
+
+
+    text-align:center;
+
+
+
+}
+
+
+
+.footer-logo h2{
+
+
+
+    color:#d4af37;
+
+
+
+    font-size:34px;
+
+
+
+    margin-bottom:10px;
+
+
+
+}
+
+
+
+.footer-logo p{
+
+
+
+    color:#cccccc;
+
+
+
+    max-width:700px;
+
+
+
+    margin:auto;
+
+
+
+    line-height:30px;
+
+
+
+}
+
+
+
+.redes{
+
+
+
+    margin:35px 0;
+
+
+
+}
+
+
+
+.redes a{
+
+
+
+    display:inline-flex;
+
+
+
+    width:55px;
+
+
+
+    height:55px;
+
+
+
+    justify-content:center;
+
+
+
+    align-items:center;
+
+
+
+    margin:10px;
+
+
+
+    border-radius:50%;
+
+
+
+    background:#242424;
+
+
+
+    color:#d4af37;
+
+
+
+    text-decoration:none;
+
+
+
+    font-size:24px;
+
+
+
+    transition:.4s;
+
+
+
+}
+
+
+
+.redes a:hover{
+
+
+
+    transform:translateY(-8px);
+
+
+
+    background:#d4af37;
+
+
+
+    color:#111;
+
+
+
+}
+
+
+
+footer hr{
+
+
+
+    border:0;
+
+
+
+    border-top:1px solid rgba(255,255,255,.1);
+
+
+
+    margin:30px 0;
+
+
+
+}
+
+
+
+footer p{
+
+
+
+    color:#bfbfbf;
+
+
+
+    margin:10px 0;
+
+
+
+}
+
+
+
+/*==========================
+
+    BOTÓN ARRIBA
+
+==========================*/
+
+
+
+#arriba{
+
+
+
+    position:fixed;
+
+
+
+    right:25px;
+
+
+
+    bottom:25px;
+
+
+
+    width:60px;
+
+
+
+    height:60px;
+
+
+
+    border-radius:50%;
+
+
+
+    border:none;
+
+
+
+    background:#d4af37;
+
+
+
+    color:#111;
+
+
+
+    font-size:22px;
+
+
+
+    cursor:pointer;
+
+
+
+    display:none;
+
+
+
+    z-index:1000;
+
+
+
+    transition:.4s;
+
+
+
+}
+
+
+
+#arriba:hover{
+
+
+
+    transform:scale(1.12);
+
+
+
+}
+
+
+
+/*==========================
+
+      RESPONSIVE
+
+==========================*/
+
+
+
+@media(max-width:900px){
+
+
+
+header{
+
+
+
+    flex-direction:column;
+
+
+
+    height:auto;
+
+
+
+    padding:20px;
+
+
+
+}
+
+
+
+nav{
+
+
+
+    flex-wrap:wrap;
+
+
+
+    justify-content:center;
+
+
+
+    margin:20px 0;
+
+
+
+}
+
+
+
+.hero{
+
+
+
+    flex-direction:column;
+
+
+
+    text-align:center;
+
+
+
+    padding-top:170px;
+
+
+
+}
+
+
+
+.hero-info{
+
+
+
+    width:100%;
+
+
+
+}
+
+
+
+.hero h1{
+
+
+
+    font-size:55px;
+
+
+
+    line-height:60px;
+
+
+
+}
+
+
+
+.hero-img{
+
+
+
+    width:100%;
+
+
+
+    margin-top:40px;
+
+
+
+}
+
+
+
+.hero-img img{
+
+
+
+    width:320px;
+
+
+
+}
+
+
+
+.bio-grid{
+
+
+
+    grid-template-columns:1fr;
+
+
+
+}
+
+
+
+.estadisticas{
+
+
+
+    flex-direction:column;
+
+
+
+    align-items:center;
+
+
+
+}
+
+
+
+}
+
+
+
+/*==========================
+
+    ANIMACIONES
+
+==========================*/
+
+
+
+.card,
+
+.premio,
+
+.musica-card,
+
+.bio-grid img{
+
+
+
+    animation:aparecer 1s ease;
+
+
+
+}
+
+
+
+@keyframes aparecer{
+
+
+
+    from{
+
+
+
+        opacity:0;
+
+
+
+        transform:translateY(50px);
+
+
+
+    }
+
+
+
+    to{
+
+
+
+        opacity:1;
+
+
+
+        transform:translateY(0);
+
+
+
+    }
+
+
+
+}
+/*====================================================
+            EFECTOS PREMIUM MARSVERSE
+====================================================*/
+
+/* Fondo con luces doradas */
+
+body{
+
+    background:
+    radial-gradient(circle at 15% 20%, rgba(212,175,55,.18), transparent 25%),
+    radial-gradient(circle at 85% 10%, rgba(255,193,7,.12), transparent 30%),
+    radial-gradient(circle at 50% 90%, rgba(120,70,20,.22), transparent 35%),
+    linear-gradient(180deg,#050505,#15110d,#090909);
+
+    background-attachment:fixed;
+
+}
+
+
+/* Brillo superior */
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    width:700px;
+
+    height:700px;
+
+    border-radius:50%;
+
+    background:radial-gradient(circle,rgba(212,175,55,.10),transparent 70%);
+
+    top:-280px;
+
+    left:-250px;
+
+    pointer-events:none;
+
+    z-index:-1;
+
+}
+
+
+/* Brillo inferior */
+
+body::after{
+
+    content:"";
+
+    position:fixed;
+
+    width:600px;
+
+    height:600px;
+
+    border-radius:50%;
+
+    background:radial-gradient(circle,rgba(212,175,55,.08),transparent 70%);
+
+    right:-200px;
+
+    bottom:-220px;
+
+    pointer-events:none;
+
+    z-index:-1;
+
+}
+
+
+/*=========================
+      HEADER
+=========================*/
+
+header{
+
+    transition:.45s;
+
+    box-shadow:0 12px 35px rgba(0,0,0,.55);
+
+}
+
+
+/* Línea dorada */
+
+header::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:0;
+
+    width:100%;
+
+    height:2px;
+
+    background:linear-gradient(to right,
+    transparent,
+    #d4af37,
+    transparent);
+
+}
+
+
+/*=========================
+      LOGO
+=========================*/
+
+.logo{
+
+    transition:.4s;
+
+}
+
+.logo:hover{
+
+    transform:scale(1.05);
+
+}
+
+.logo h2{
+
+    background:linear-gradient(45deg,#fff,#d4af37);
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+
+}
+
+.logo span{
+
+    letter-spacing:4px;
+
+}
+
+
+/*=========================
+      HERO
+=========================*/
+
+.hero{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+
+/* Línea decorativa */
+
+.hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:420px;
+
+    height:420px;
+
+    border-radius:50%;
+
+    border:2px solid rgba(212,175,55,.10);
+
+    right:150px;
+
+    top:100px;
+
+}
+
+
+/* Título */
+
+.hero h1{
+
+    text-shadow:
+
+    0 0 10px rgba(255,255,255,.15),
+
+    0 0 25px rgba(212,175,55,.20);
+
+}
+
+
+/* Texto */
+
+.hero p{
+
+    max-width:620px;
+
+}
+
+
+/*=========================
+      BOTONES
+=========================*/
+
+.btn{
+
+    box-shadow:
+
+    0 0 20px rgba(212,175,55,.35);
+
+}
+
+.btn:hover{
+
+    box-shadow:
+
+    0 0 35px rgba(212,175,55,.65);
+
+}
+
+
+.btn2:hover{
+
+    box-shadow:
+
+    0 0 30px rgba(212,175,55,.40);
+
+}
+
+
+/*=========================
+      FOTO
+=========================*/
+
+.hero-img{
+
+    position:relative;
+
+}
+
+.hero-img::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:460px;
+
+    height:460px;
+
+    border-radius:50%;
+
+    background:radial-gradient(circle,
+    rgba(212,175,55,.18),
+    transparent 70%);
+
+    z-index:-1;
+
+}
+
+
+.hero-img img{
+
+    width:470px;
+
+    filter:drop-shadow(0 20px 40px rgba(0,0,0,.7));
+
+    animation:flotar 5s ease-in-out infinite;
+
+}
+
+
+/*=========================
+      ESTADÍSTICAS
+=========================*/
+
+.estadisticas div{
+
+    transition:.45s;
+
+    cursor:pointer;
+
+}
+
+.estadisticas div:hover{
+
+    transform:translateY(-10px);
+
+    border-color:#d4af37;
+
+    box-shadow:
+
+    0 15px 35px rgba(212,175,55,.18);
+
+}
+
+.estadisticas h3{
+
+    text-shadow:
+
+    0 0 12px rgba(212,175,55,.45);
+
+}
+
+
+/*=========================
+      ANIMACIÓN
+=========================*/
+
+@keyframes flotar{
+
+0%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-12px);
+
+}
+
+100%{
+
+transform:translateY(0);
+
+}
+
+}
+/*====================================================
+        PARTE 2 - ÁLBUMES Y GALERÍA
+====================================================*/
+
+/* ====== TÍTULOS DE LAS SECCIONES ====== */
+
+section h2{
+
+    font-size:42px;
+
+    text-align:center;
+
+    color:#fff;
+
+    margin-bottom:15px;
+
+    position:relative;
+
+}
+
+section h2::after{
+
+    content:"";
+
+    width:120px;
+
+    height:4px;
+
+    display:block;
+
+    margin:15px auto;
+
+    border-radius:30px;
+
+    background:linear-gradient(to right,#8b5a00,#d4af37,#fff3b0);
+
+}
+
+/* ====== TARJETAS ====== */
+
+.card{
+
+    background:rgba(25,25,25,.82);
+
+    border:1px solid rgba(212,175,55,.18);
+
+    border-radius:22px;
+
+    overflow:hidden;
+
+    transition:.45s;
+
+    backdrop-filter:blur(10px);
+
+    box-shadow:0 12px 25px rgba(0,0,0,.45);
+
+}
+
+.card:hover{
+
+    transform:translateY(-12px) scale(1.03);
+
+    border-color:#d4af37;
+
+    box-shadow:
+
+    0 18px 35px rgba(212,175,55,.30),
+
+    0 0 35px rgba(212,175,55,.15);
+
+}
+
+.card img{
+
+    width:100%;
+
+    height:320px;
+
+    object-fit:cover;
+
+    transition:.6s;
+
+}
+
+.card:hover img{
+
+    transform:scale(1.08);
+
+}
+
+.card h3{
+
+    color:#fff;
+
+    font-size:24px;
+
+    margin:18px;
+
+}
+
+.card p{
+
+    color:#d8d8d8;
+
+    margin:18px;
+
+    line-height:1.8;
+
+}
+
+/* ====== ÁLBUMES ====== */
+
+.albumes{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+    gap:35px;
+
+    margin-top:40px;
+
+}
+
+.album{
+
+    background:#111;
+
+    border-radius:25px;
+
+    overflow:hidden;
+
+    text-align:center;
+
+    transition:.45s;
+
+    border:1px solid rgba(212,175,55,.15);
+
+}
+
+.album:hover{
+
+    transform:translateY(-15px) rotate(-1deg);
+
+    box-shadow:
+
+    0 18px 35px rgba(212,175,55,.25);
+
+}
+
+.album img{
+
+    width:100%;
+
+    height:280px;
+
+    object-fit:cover;
+
+    transition:.6s;
+
+}
+
+.album:hover img{
+
+    transform:scale(1.1);
+
+}
+
+.album h3{
+
+    color:#fff;
+
+    margin-top:20px;
+
+}
+
+.album span{
+
+    color:#d4af37;
+
+    display:block;
+
+    margin-bottom:18px;
+
+}
+
+/* ====== GALERÍA ====== */
+
+.grid-galeria{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+    gap:22px;
+
+    margin-top:40px;
+
+}
+
+.grid-galeria img{
+
+    width:100%;
+
+    height:320px;
+
+    object-fit:cover;
+
+    border-radius:22px;
+
+    transition:.45s;
+
+    cursor:pointer;
+
+    border:2px solid rgba(212,175,55,.10);
+
+}
+
+.grid-galeria img:hover{
+
+    transform:scale(1.05);
+
+    border-color:#d4af37;
+
+    box-shadow:
+
+    0 15px 30px rgba(212,175,55,.35);
+
+}
+
+/* ====== BIOGRAFÍA ====== */
+
+.biografia{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:60px;
+
+    align-items:center;
+
+}
+
+.biografia img{
+
+    width:100%;
+
+    border-radius:25px;
+
+    box-shadow:
+
+    0 20px 40px rgba(0,0,0,.6);
+
+    transition:.5s;
+
+}
+
+.biografia img:hover{
+
+    transform:scale(1.03);
+
+}
+
+.biografia p{
+
+    color:#d7d7d7;
+
+    line-height:2;
+
+    font-size:18px;
+
+}
+
+/* ====== PREMIOS ====== */
+
+.premios{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    gap:30px;
+
+    margin-top:50px;
+
+}
+
+.premio{
+
+    background:linear-gradient(180deg,#1d1d1d,#101010);
+
+    border-radius:20px;
+
+    text-align:center;
+
+    padding:35px;
+
+    border:1px solid rgba(212,175,55,.15);
+
+    transition:.4s;
+
+}
+
+.premio:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 15px 30px rgba(212,175,55,.25);
+
+}
+
+.premio h1{
+
+    color:#d4af37;
+
+    font-size:48px;
+
+}
+
+.premio p{
+
+    color:#ddd;
+
+}
+
+/* ====== EFECTO BRILLO ====== */
+
+.card::before,
+.album::before,
+.premio::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:-100%;
+
+    left:-100%;
+
+    width:200%;
+
+    height:200%;
+
+    background:linear-gradient(
+        45deg,
+        transparent,
+        rgba(255,255,255,.08),
+        transparent
+    );
+
+    transform:rotate(25deg);
+
+    transition:.8s;
+
+}
+
+.card:hover::before,
+.album:hover::before,
+.premio:hover::before{
+
+    top:100%;
+
+    left:100%;
+
+}
+¡Perfecto! 😎 Esta es la **PARTE 3**. Pégala **al final de `estilos.css`**, debajo de la Parte 2.
+
+```css
+/*====================================================
+      PARTE 3 - FOOTER, EFECTOS Y RESPONSIVE
+====================================================*/
+
+/*=============== CONTACTO ===============*/
+
+.contacto{
+
+    background:linear-gradient(180deg,#111,#070707);
+
+    border-radius:30px;
+
+    padding:60px;
+
+    border:1px solid rgba(212,175,55,.15);
+
+    box-shadow:0 15px 40px rgba(0,0,0,.45);
+
+}
+
+.contacto h2{
+
+    margin-bottom:25px;
+
+}
+
+.contacto p{
+
+    color:#d8d8d8;
+
+    line-height:1.8;
+
+}
+
+.contacto input,
+.contacto textarea{
+
+    width:100%;
+
+    padding:18px;
+
+    margin-top:15px;
+
+    margin-bottom:20px;
+
+    border:none;
+
+    border-radius:15px;
+
+    background:#1b1b1b;
+
+    color:#fff;
+
+    border:1px solid rgba(212,175,55,.20);
+
+    transition:.35s;
+
+}
+
+.contacto input:focus,
+.contacto textarea:focus{
+
+    outline:none;
+
+    border-color:#d4af37;
+
+    box-shadow:0 0 20px rgba(212,175,55,.30);
+
+}
+
+/*=============== FOOTER ===============*/
+
+footer{
+
+    margin-top:100px;
+
+    padding:70px 10%;
+
+    background:#050505;
+
+    border-top:2px solid rgba(212,175,55,.15);
+
+    text-align:center;
+
+}
+
+.footer-logo{
+
+    font-size:40px;
+
+    color:#d4af37;
+
+    margin-bottom:15px;
+
+}
+
+footer h3{
+
+    color:#fff;
+
+    font-size:30px;
+
+}
+
+footer p{
+
+    color:#cfcfcf;
+
+    margin-top:15px;
+
+    line-height:1.8;
+
+}
+
+.redes{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:18px;
+
+    margin:35px 0;
+
+}
+
+.redes a{
+
+    width:55px;
+
+    height:55px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:#181818;
+
+    color:#d4af37;
+
+    text-decoration:none;
+
+    transition:.4s;
+
+    font-size:22px;
+
+}
+
+.redes a:hover{
+
+    transform:translateY(-8px) rotate(360deg);
+
+    background:#d4af37;
+
+    color:#111;
+
+}
+
+.copy{
+
+    color:#9e9e9e;
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+    padding-top:25px;
+
+    margin-top:35px;
+
+}
+
+/*=============== BOTÓN SUBIR ===============*/
+
+#arriba{
+
+    position:fixed;
+
+    right:30px;
+
+    bottom:30px;
+
+    width:60px;
+
+    height:60px;
+
+    border-radius:50%;
+
+    border:none;
+
+    background:#d4af37;
+
+    color:#111;
+
+    font-size:24px;
+
+    cursor:pointer;
+
+    transition:.4s;
+
+    box-shadow:0 0 25px rgba(212,175,55,.35);
+
+}
+
+#arriba:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 0 40px rgba(212,175,55,.60);
+
+}
+
+/*=============== SCROLL ===============*/
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#0d0d0d;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#d4af37;
+
+    border-radius:50px;
+
+}
+
+/*=============== SELECCIÓN ===============*/
+
+::selection{
+
+    background:#d4af37;
+
+    color:#111;
+
+}
+
+/*=============== ANIMACIONES ===============*/
+
+.fade{
+
+    animation:fade .8s ease;
+
+}
+
+@keyframes fade{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+.girar:hover{
+
+    animation:girar 1s linear;
+
+}
+
+@keyframes girar{
+
+    from{
+
+        transform:rotate(0deg);
+
+    }
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+/*=============== RESPONSIVE ===============*/
+
+@media(max-width:1100px){
+
+.hero{
+
+display:flex;
+
+flex-direction:column;
+
+text-align:center;
+
+}
+
+.hero-img{
+
+margin-top:50px;
+
+}
+
+.biografia{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+@media(max-width:900px){
+
+nav{
+
+display:none;
+
+}
+
+.hero h1{
+
+font-size:70px;
+
+}
+
+.hero-img img{
+
+width:330px;
+
+}
+
+.albumes{
+
+grid-template-columns:1fr 1fr;
+
+}
+
+}
+
+@media(max-width:700px){
+
+.hero h1{
+
+font-size:55px;
+
+}
+
+section h2{
+
+font-size:35px;
+
+}
+
+.albumes{
+
+grid-template-columns:1fr;
+
+}
+
+.grid-galeria{
+
+grid-template-columns:1fr;
+
+}
+
+.estadisticas{
+
+display:grid;
+
+grid-template-columns:1fr;
+
+gap:20px;
+
+}
+
+.contacto{
+
+padding:35px;
+
+}
+
+}
+
+@media(max-width:480px){
+
+.hero h1{
+
+font-size:42px;
+
+}
+
+.btn{
+
+width:100%;
+
+margin-bottom:15px;
+
+}
+
+.btn2{
+
+width:100%;
+
+}
+
+.hero-img img{
+
+width:260px;
+
+}
+
+.logo h2{
+
+font-size:28px;
+
+}
+
+}
+
+
