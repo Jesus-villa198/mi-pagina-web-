@@ -1,254 +1,32 @@
-/* =====================================================
+/*==================================
 
-   MENÚ
+        BOTÓN VOLVER ARRIBA
 
-===================================================== */
+===================================*/
 
 
 
-function toggleMenu() {
+const btn = document.getElementById("arriba");
 
 
 
-    const nav = document.getElementById("nav");
+window.addEventListener("scroll", () => {
 
 
 
-    nav.classList.toggle("active");
+    if (window.scrollY > 300) {
 
 
 
-}
+        btn.style.display = "block";
 
 
 
+    } else {
 
 
-/* =====================================================
 
-   FRASES MOTIVACIONALES
-
-===================================================== */
-
-
-
-const frases = [
-
-
-
-    "No necesitas tener todo resuelto. Solo necesitas comenzar.",
-
-
-
-    "Tu proceso no tiene que parecerse al de nadie más.",
-
-
-
-    "La disciplina te ayuda a continuar cuando la motivación desaparece.",
-
-
-
-    "Cada pequeño avance cuenta.",
-
-
-
-    "No permitas que un mal día te haga pensar que tienes una mala vida.",
-
-
-
-    "Lo que hoy parece difícil puede convertirse mañana en una de tus mayores fortalezas.",
-
-
-
-    "Cree en la persona que estás construyendo.",
-
-
-
-    "Tus sueños también necesitan de tu constancia.",
-
-
-
-    "No estás empezando desde cero. Estás comenzando desde la experiencia.",
-
-
-
-    "Tu futuro necesita que no abandones tu presente."
-
-
-
-];
-
-
-
-
-
-function mostrarFrase() {
-
-
-
-    const elemento = document.getElementById("frase");
-
-
-
-    const indice =
-
-        Math.floor(Math.random() * frases.length);
-
-
-
-    elemento.style.opacity = "0";
-
-
-
-    setTimeout(() => {
-
-
-
-        elemento.textContent =
-
-            "“" + frases[indice] + "”";
-
-
-
-        elemento.style.opacity = "1";
-
-
-
-    }, 250);
-
-
-
-}
-
-
-
-
-
-/* =====================================================
-
-   MENSAJES DE PROPÓSITO
-
-===================================================== */
-
-
-
-const mensajes = [
-
-
-
-    "Tu propósito puede cambiar y crecer contigo.",
-
-
-
-    "No necesitas conocer todo el camino para dar el primer paso.",
-
-
-
-    "Aquello que te inspira puede convertirse en aquello que construyes.",
-
-
-
-    "Tu vida no necesita ser perfecta para tener propósito.",
-
-
-
-    "Pregúntate qué clase de persona quieres ser mientras persigues tus metas.",
-
-
-
-    "El propósito aparece muchas veces cuando conectamos nuestros valores con nuestras acciones."
-
-
-
-];
-
-
-
-
-
-function nuevoMensaje() {
-
-
-
-    const elemento =
-
-        document.getElementById("purpose-message");
-
-
-
-    const indice =
-
-        Math.floor(Math.random() * mensajes.length);
-
-
-
-    elemento.style.opacity = "0";
-
-
-
-    setTimeout(() => {
-
-
-
-        elemento.textContent =
-
-            mensajes[indice];
-
-
-
-        elemento.style.opacity = "1";
-
-
-
-    }, 250);
-
-
-
-}
-
-
-
-
-
-/* =====================================================
-
-   NEWSLETTER
-
-===================================================== */
-
-
-
-function suscribirse(event) {
-
-
-
-    event.preventDefault();
-
-
-
-    const email =
-
-        document.getElementById("email");
-
-
-
-    const mensaje =
-
-        document.getElementById("subscription-message");
-
-
-
-    if (email.value.trim() !== "") {
-
-
-
-        mensaje.textContent =
-
-            "✦ Gracias por formar parte de IMPULSO. Sigue creyendo en ti.";
-
-
-
-        email.value = "";
+        btn.style.display = "none";
 
 
 
@@ -256,100 +34,444 @@ function suscribirse(event) {
 
 
 
-}
+});
 
 
 
-
-
-/* =====================================================
-
-   ANIMACIÓN AL HACER SCROLL
-
-===================================================== */
+btn.onclick = () => {
 
 
 
-const elementos =
-
-    document.querySelectorAll(
-
-        ".message-card, .habit, .stats div"
-
-    );
+    window.scrollTo({
 
 
 
-
-
-const observer =
-
-    new IntersectionObserver(
-
-        (entries) => {
+        top:0,
 
 
 
-            entries.forEach(entry => {
+        behavior:"smooth"
 
 
 
-                if (entry.isIntersecting) {
+    });
 
 
 
-                    entry.target.style.opacity = "1";
-
-                    entry.target.style.transform =
-
-                        "translateY(0)";
+};
 
 
 
-                }
+/*==================================
+
+        HEADER
+
+===================================*/
 
 
 
-            });
+const header = document.querySelector("header");
 
 
 
-        },
-
-        {
-
-            threshold: 0.15
-
-        }
-
-    );
+window.addEventListener("scroll",()=>{
 
 
 
-
-
-elementos.forEach(elemento => {
-
-
-
-    elemento.style.opacity = "0";
+    if(window.scrollY>50){
 
 
 
-    elemento.style.transform =
+        header.style.background="rgba(20,20,20,.95)";
 
-        "translateY(30px)";
-
-
-
-    elemento.style.transition =
-
-        "opacity 0.7s ease, transform 0.7s ease";
+        header.style.boxShadow="0 10px 25px rgba(0,0,0,.4)";
 
 
 
-    observer.observe(elemento);
+    }else{
+
+
+
+        header.style.background="rgba(0,0,0,.45)";
+
+        header.style.boxShadow="none";
+
+
+
+    }
 
 
 
 });
+
+
+
+/*==================================
+
+    APARICIÓN DE SECCIONES
+
+===================================*/
+
+
+
+const elementos=document.querySelectorAll("section");
+
+
+
+const mostrar=()=>{
+
+
+
+elementos.forEach(el=>{
+
+
+
+const top=el.getBoundingClientRect().top;
+
+
+
+if(top<window.innerHeight-120){
+
+
+
+el.style.opacity="1";
+
+el.style.transform="translateY(0)";
+
+
+
+}
+
+
+
+});
+
+
+
+};
+
+
+
+elementos.forEach(el=>{
+
+
+
+el.style.opacity="0";
+
+el.style.transform="translateY(80px)";
+
+el.style.transition="all .8s ease";
+
+
+
+});
+
+
+
+window.addEventListener("scroll",mostrar);
+
+
+
+mostrar();
+
+
+
+/*==================================
+
+    CONTADORES
+
+===================================*/
+
+
+
+const numeros=document.querySelectorAll(".premio h1");
+
+
+
+let iniciado=false;
+
+
+
+window.addEventListener("scroll",()=>{
+
+
+
+const premios=document.querySelector(".premios");
+
+
+
+if(!premios) return;
+
+
+
+const posicion=premios.getBoundingClientRect().top;
+
+
+
+if(posicion<400 && !iniciado){
+
+
+
+iniciado=true;
+
+
+
+numeros.forEach(numero=>{
+
+
+
+const texto=numero.innerText;
+
+
+
+const valor=parseInt(texto);
+
+
+
+if(isNaN(valor)) return;
+
+
+
+let inicio=0;
+
+
+
+const intervalo=setInterval(()=>{
+
+
+
+inicio++;
+
+
+
+numero.innerText=inicio+"+";
+
+
+
+if(inicio>=valor){
+
+
+
+clearInterval(intervalo);
+
+
+
+}
+
+
+
+},70);
+
+
+
+});
+
+
+
+}
+
+
+
+});
+
+
+
+/*==================================
+
+        TARJETAS
+
+===================================*/
+
+
+
+const cards=document.querySelectorAll(".card");
+
+
+
+cards.forEach(card=>{
+
+
+
+card.addEventListener("mousemove",(e)=>{
+
+
+
+const x=e.offsetX;
+
+const y=e.offsetY;
+
+
+
+card.style.transform=`
+
+rotateX(${-(y-150)/18}deg)
+
+rotateY(${(x-150)/18}deg)
+
+scale(1.05)
+
+`;
+
+
+
+});
+
+
+
+card.addEventListener("mouseleave",()=>{
+
+
+
+card.style.transform="rotateX(0) rotateY(0) scale(1)";
+
+
+
+});
+
+
+
+});
+
+
+
+/*==================================
+
+        GALERÍA
+
+===================================*/
+
+
+
+const imagenes=document.querySelectorAll(".grid-galeria img");
+
+
+
+imagenes.forEach(img=>{
+
+
+
+img.addEventListener("click",()=>{
+
+
+
+const fondo=document.createElement("div");
+
+
+
+fondo.style.position="fixed";
+
+fondo.style.left="0";
+
+fondo.style.top="0";
+
+fondo.style.width="100%";
+
+fondo.style.height="100%";
+
+fondo.style.background="rgba(0,0,0,.9)";
+
+fondo.style.display="flex";
+
+fondo.style.justifyContent="center";
+
+fondo.style.alignItems="center";
+
+fondo.style.zIndex="9999";
+
+
+
+const foto=document.createElement("img");
+
+
+
+foto.src=img.src;
+
+
+
+foto.style.maxWidth="85%";
+
+foto.style.maxHeight="85%";
+
+foto.style.borderRadius="20px";
+
+foto.style.boxShadow="0 0 40px #d4af37";
+
+
+
+fondo.appendChild(foto);
+
+
+
+document.body.appendChild(fondo);
+
+
+
+fondo.onclick=()=>{
+
+
+
+document.body.removeChild(fondo);
+
+
+
+}
+
+
+
+});
+
+
+
+});
+
+
+
+/*==================================
+
+    EFECTO HERO
+
+===================================*/
+
+
+
+const hero=document.querySelector(".hero-img img");
+
+
+
+if(hero){
+
+
+
+document.addEventListener("mousemove",(e)=>{
+
+
+
+const x=(window.innerWidth/2-e.clientX)/70;
+
+
+
+const y=(window.innerHeight/2-e.clientY)/70;
+
+
+
+hero.style.transform=`rotateY(${x}deg) rotateX(${y}deg)`;
+
+
+
+});
+
+
+
+}
+
+
+
+/*==================================
+
+    MENSAJE
+
+===================================*/
+
+
+
+console.log("MarsVerse cargado correctamente.");
