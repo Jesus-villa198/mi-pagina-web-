@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0b2828" />
+  <title>Marea — Escápate al Caribe</title>
+  <style>
+    :root {
+      --deep: #0b2828;
+      --deep-2: #123a38;
+      --sand: #f5f0e6;
+      --cream: #fffdf7;
+      --coral: #ff8068;
+      --mint: #c4e4d7;
+      --muted: #a8c2b9;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--cream);
+      background: var(--deep);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    a { color: inherit; text-decoration: none; }
+    .site-shell { min-height: 100vh; overflow: hidden; }
+    header {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+      width: min(1180px, calc(100% - 64px));
+      margin: 0 auto;
+      padding: 27px 0;
+    }
+    .brand { display: inline-flex; align-items: center; gap: 11px; font-weight: 800; letter-spacing: .13em; font-size: 1.05rem; }
+    .brand-mark { width: 38px; height: 38px; display: grid; place-items: center; border: 1px solid rgba(196,228,215,.65); border-radius: 50%; color: var(--mint); }
+    .brand-mark svg { width: 23px; height: 23px; }
+    nav { display: flex; align-items: center; gap: clamp(20px, 3.2vw, 42px); color: #d4e2dc; font-size: .88rem; }
+    nav a { transition: color .2s ease; }
+    nav a:hover { color: var(--coral); }
+    .nav-cta { border: 1px solid rgba(255,253,247,.55); padding: 11px 17px; border-radius: 999px; color: var(--cream); }
+    .hero {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1.02fr .98fr;
+      align-items: center;
+      gap: 28px;
+      width: min(1180px, calc(100% - 64px));
+      min-height: 610px;
+      margin: 0 auto;
+      padding: 36px 0 76px;
+    }
+    .hero-copy { position: relative; z-index: 1; padding: 26px 0 50px; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 10px; color: var(--mint); text-transform: uppercase; letter-spacing: .19em; font-size: .72rem; font-weight: 700; }
+    .eyebrow::before { content: ""; display: inline-block; width: 28px; height: 1px; background: var(--coral); }
+    h1 { margin: 25px 0 20px; font-family: Georgia, "Times New Roman", serif; font-weight: 500; font-size: clamp(3.6rem, 7.2vw, 6.6rem); line-height: .96; letter-spacing: -.055em; }
+    h1 em { color: var(--coral); font-weight: 400; }
+    .intro { max-width: 450px; color: #c4d6cf; font-size: 1.04rem; line-height: 1.8; margin: 0 0 31px; }
+    .hero-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 16px; }
+    .button { display: inline-flex; align-items: center; justify-content: center; gap: 10px; border-radius: 999px; padding: 14px 21px; font-weight: 750; font-size: .88rem; transition: transform .2s ease, background .2s ease; }
+    .button:hover { transform: translateY(-2px); }
+    .button-primary { color: var(--deep); background: var(--mint); }
+    .button-primary:hover { background: #d9f0e6; }
+    .button-link { color: var(--cream); padding-left: 4px; }
+    .button-link span { font-size: 1.2rem; color: var(--coral); }
+    .hero-visual { min-height: 490px; position: relative; display: flex; align-items: center; justify-content: center; }
+    .photo-frame { position: absolute; inset: 0 0 0 5%; overflow: hidden; border-radius: 48% 48% 8px 8px; background: #8ebdb2; box-shadow: 0 28px 80px rgba(0,0,0,.2); }
+    .photo-frame::before { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, rgba(8,35,35,.04) 30%, rgba(8,35,35,.38) 100%); }
+    .photo-frame img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
+    .sun-disc { position: absolute; z-index: 0; width: 225px; height: 225px; top: 2%; right: -1%; border-radius: 50%; background: var(--coral); opacity: .98; }
+    .image-note { position: absolute; z-index: 2; left: 9%; bottom: 7%; display: flex; align-items: center; gap: 12px; }
+    .image-note .pin { width: 42px; height: 42px; border: 1px solid rgba(255,255,255,.7); display: grid; place-items: center; border-radius: 50%; backdrop-filter: blur(8px); }
+    .image-note small { display: block; color: #e0ebe5; font-size: .69rem; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 4px; }
+    .image-note strong { font-family: Georgia, serif; font-size: 1.2rem; font-weight: 500; }
+    .floating-card { position: absolute; z-index: 3; right: -3%; bottom: 12%; width: 160px; padding: 17px; color: var(--deep); background: var(--sand); border-radius: 14px; box-shadow: 0 15px 38px rgba(0,0,0,.18); transform: rotate(3deg); }
+    .floating-card .rating { color: #c65e49; letter-spacing: .12em; font-size: .8rem; }
+    .floating-card b { display: block; margin: 7px 0 3px; font-family: Georgia, serif; font-size: 1.3rem; font-weight: 500; }
+    .floating-card span { color: #60736b; font-size: .75rem; }
+    .below-hero { border-top: 1px solid rgba(196,228,215,.18); border-bottom: 1px solid rgba(196,228,215,.18); }
+    .feature-row { width: min(1180px, calc(100% - 64px)); margin: 0 auto; padding: 22px 0; display: flex; justify-content: space-between; align-items: center; gap: 20px; color: var(--muted); font-size: .78rem; }
+    .feature { display: flex; gap: 10px; align-items: center; }
+    .feature strong { color: var(--cream); font-weight: 650; }
+    .feature-icon { color: var(--coral); font-size: 1rem; }
+    footer { width: min(1180px, calc(100% - 64px)); margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 24px; padding: 27px 0 31px; color: #a9c2b9; font-size: .78rem; }
+    .contact { display: flex; flex-wrap: wrap; align-items: center; gap: 20px; }
+    .contact a:hover { color: var(--coral); }
+    .copyright { white-space: nowrap; }
+    @media (max-width: 800px) {
+      header, .hero, .feature-row, footer { width: min(100% - 40px, 600px); }
+      header { flex-wrap: wrap; padding: 22px 0; }
+      nav { order: 3; width: 100%; justify-content: space-between; gap: 12px; font-size: .82rem; }
+      .nav-cta { padding: 8px 12px; }
+      .hero { grid-template-columns: 1fr; padding: 25px 0 47px; gap: 7px; }
+      .hero-copy { padding: 15px 0 8px; }
+      h1 { font-size: clamp(3.6rem, 14vw, 5.4rem); }
+      .intro { font-size: .98rem; }
+      .hero-visual { min-height: 420px; }
+      .photo-frame { inset: 0 5% 0 3%; }
+      .sun-disc { width: 150px; height: 150px; right: 0; }
+      .floating-card { right: 0; bottom: 9%; }
+      .feature-row { flex-wrap: wrap; justify-content: flex-start; column-gap: 26px; }
+      footer { align-items: flex-start; flex-direction: column; gap: 14px; }
+      .contact { gap: 12px 18px; }
+    }
+    @media (max-width: 420px) {
+      header, .hero, .feature-row, footer { width: calc(100% - 32px); }
+      .brand { font-size: .95rem; }
+      nav { flex-wrap: wrap; justify-content: flex-start; gap: 15px 22px; }
+      .nav-cta { margin-left: auto; }
+      .hero-visual { min-height: 350px; }
+      .floating-card { width: 140px; padding: 13px; right: -2px; }
+      .feature-row { display: grid; grid-template-columns: 1fr 1fr; }
+      .feature { font-size: .72rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="site-shell" id="inicio">
+    <header>
+      <a class="brand" href="#inicio" aria-label="Marea, inicio">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 9.5C6 7.3 9 7.3 12 9.5C15 11.7 18 11.7 21 9.5M3 14C6 11.8 9 11.8 12 14C15 16.2 18 16.2 21 14M7 5.5C9 4.2 11 4.2 13 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </span>
+        <span>MAREA</span>
+      </a>
+      <nav aria-label="Navegación principal">
+        <a href="#destinos">Destinos</a>
+        <a href="#experiencias">Experiencias</a>
+        <a href="#nosotros">Nosotros</a>
+        <a class="nav-cta" href="#contacto">Planea tu viaje ↗</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="destinos">
+        <div class="hero-copy">
+          <div class="eyebrow">Tu próxima historia comienza aquí</div>
+          <h1>Hay lugares<br />que se sienten<br /><em>como el mar.</em></h1>
+          <p class="intro">Descubre rincones del Caribe donde el tiempo baja el ritmo, los colores cobran vida y cada atardecer se convierte en un recuerdo.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#experiencias">Explorar destinos <span aria-hidden="true">↗</span></a>
+            <a class="button button-link" href="#nosotros">Conoce Marea <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+        <div class="hero-visual" aria-label="Paisaje tropical junto al mar">
+          <div class="sun-disc"></div>
+          <div class="photo-frame">
+            <img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1400&q=85" alt="Agua turquesa del mar y olas suaves" />
+          </div>
+          <div class="image-note">
+            <span class="pin" aria-hidden="true">⌖</span>
+            <div><small>Para perderse bonito</small><strong>El Caribe te espera</strong></div>
+          </div>
+          <div class="floating-card">
+            <div class="rating" aria-label="Cinco estrellas">★★★★★</div>
+            <b>Viajes con alma</b>
+            <span>Momentos que se quedan contigo</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="below-hero" id="experiencias" aria-label="Lo que ofrecemos">
+        <div class="feature-row">
+          <div class="feature"><span class="feature-icon">✳</span><span><strong>Destinos únicos</strong> · Más allá de lo típico</span></div>
+          <div class="feature"><span class="feature-icon">≈</span><span><strong>Ritmo tranquilo</strong> · Viaja a tu manera</span></div>
+          <div class="feature"><span class="feature-icon">♡</span><span><strong>Recuerdos reales</strong> · Vive el momento</span></div>
+        </div>
+      </section>
+      <section id="nosotros" style="position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%);" aria-label="Sobre Marea">Marea inspira viajes conscientes y experiencias auténticas por el Caribe.</section>
+    </main>
+
+    <footer id="contacto">
+      <div class="contact">
+        <strong style="color:var(--cream); letter-spacing:.12em;">HABLEMOS</strong>
+        <a href="mailto:hola@marea.travel">hola@marea.travel</a>
+        <a href="tel:+573001234567">+57 300 123 4567</a>
+        <span>Cartagena, Colombia</span>
+      </div>
+      <div class="copyright">© 2026 Marea · Hecho para explorar.</div>
+    </footer>
+  </div>
+</body>
+</html>
